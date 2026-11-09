@@ -32,15 +32,16 @@ The API will be available at `http://localhost:3001`.
 
 Set these environment variables (already defined in `docker-compose.yml`):
 
-| Variable   | Description                    | Default                  |
-|------------|--------------------------------|--------------------------|
+| Variable   | Description                                   | Default                   |
+| ---------- | --------------------------------------------- | ------------------------- |
 | `API_KEY`  | Secret key required in the `x-api-key` header | `change-me-in-production` |
-| `DATA_DIR` | Directory for the SQLite DB and CSVs | `/data`                  |
-| `PORT`     | Port the server listens on     | `3001`                   |
+| `DATA_DIR` | Directory for the SQLite DB and CSVs          | `/data`                   |
+| `PORT`     | Port the server listens on                    | `3001`                    |
 
 ## Endpoints
 
 ### Create feedback
+
 ```http
 POST /feedback
 x-api-key: your-api-key
@@ -55,11 +56,13 @@ Content-Type: application/json
 ```
 
 Response:
+
 ```json
 { "id": 1 }
 ```
 
 ### Update comment
+
 ```http
 PATCH /feedback/1
 x-api-key: your-api-key
@@ -71,6 +74,7 @@ Content-Type: application/json
 ```
 
 ### Health check
+
 ```http
 GET /health
 ```
